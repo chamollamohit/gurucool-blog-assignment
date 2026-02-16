@@ -9,6 +9,8 @@ export type Blog = {
     category: string;
 };
 
+
+
 export let blogs: Blog[] = [
     {
         id: "1",
@@ -61,3 +63,27 @@ export let blogs: Blog[] = [
         content: "<p>The local cafe is more than a place for caffeine; it's a social anchor. These spaces allow for 'weak tie' interactions that strengthen our sense of belonging.</p>"
     }
 ];
+
+
+export function getAllBlogs(): Blog[] {
+    return blogs;
+}
+
+export function getBlogById(id: string): Blog | undefined {
+    return blogs.find((blog) => blog.id === id);
+}
+
+
+export function addBlog(blog: Blog) {
+    blogs.push(blog);
+}
+
+export function updateBlog(id: string, updatedBlog: Blog) {
+    blogs = blogs.map((blog) =>
+        blog.id === id ? updatedBlog : blog
+    );
+}
+
+export function deleteBlog(id: string) {
+    blogs = blogs.filter((blog) => blog.id !== id);
+}

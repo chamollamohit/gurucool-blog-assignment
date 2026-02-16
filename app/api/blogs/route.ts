@@ -1,10 +1,10 @@
-import { Blog, blogs } from "@/lib/db";
+import { blogs, Blog } from "@/lib/db";
 import { randomUUID } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 
 
 export async function GET() {
-    return NextResponse.json({ success: true, data: blogs })
+    return NextResponse.json({ success: true, data: blogs }, { status: 200 })
 }
 
 export async function POST(request: NextRequest) {
@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
         const { title, author, content, category } = await request.json()
 
         const newBlog: Blog = {
-            id: randomUUID(),
+            id: randomUUID().toString(),
             title,
             author,
             content,
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
         blogs.unshift(newBlog);
         return NextResponse.json({ success: true, data: newBlog }, { status: 201 })
     } catch (error) {
-        return NextResponse.json({ error: 'Failed to create blog' }, { status: 500 });
+        return NextResponse.json({ success: false, error: 'Failed to create blog' }, { status: 500 });
     }
 
 }
