@@ -10,8 +10,9 @@ export type Blog = {
 };
 
 
+const globalForBlogs = global as unknown as { blogs: Blog[] };
 
-export let blogs: Blog[] = [
+export let blogs = globalForBlogs.blogs || [
     {
         id: "1",
         title: "The Art of Minimal Living: Finding Space in a Crowded World",
@@ -64,6 +65,7 @@ export let blogs: Blog[] = [
     }
 ];
 
+if (process.env.NODE_ENV !== 'production') globalForBlogs.blogs = blogs;
 
 export function getAllBlogs(): Blog[] {
     return blogs;
