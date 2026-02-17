@@ -1,6 +1,7 @@
 import BlogCard from "@/components/blog-components/BlogCard";
 import FeaturedBlog from "@/components/blog-components/FeaturedBlog";
 import { getAllBlogs } from "@/lib/db";
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
     const blogs = getAllBlogs();

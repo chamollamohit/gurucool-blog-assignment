@@ -37,7 +37,7 @@ export async function DELETE(request: NextRequest, { params }: { params: Promise
 
         if (blogIndex !== -1) {
             blogs.splice(blogIndex, 1)
-            return NextResponse.json({ success: true, message: "Blog deleted successfully" }, { status: 204 })
+            return NextResponse.json({ success: true, message: "Blog deleted successfully" }, { status: 200 })
         }
 
         return NextResponse.json({ success: false, error: "Blog not found" }, { status: 404 })

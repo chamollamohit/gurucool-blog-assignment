@@ -5,6 +5,7 @@ export type Blog = {
     authorImage: string;
     content: string;
     preview: string;
+    isPublished: boolean;
     date: string;
     category: string;
 };
@@ -14,54 +15,137 @@ const globalForBlogs = global as unknown as { blogs: Blog[] };
 
 export let blogs = globalForBlogs.blogs || [
     {
-        id: "1",
-        title: "The Art of Minimal Living: Finding Space in a Crowded World",
-        author: "Mohit",
-        authorImage: "https://i.pravatar.cc/150?u=moh",
-        category: "LIFESTYLE",
-        date: "Feb 12, 2026",
-        preview: "Discover how simplifying your physical space can lead to a more intentional, fulfilling life...",
-        content: "<h2>The Essence of Minimalism</h2><p>Minimalism is not about having less; it's about making room for more of what matters. In an age of constant digital noise, the call to simplify has never been louder.</p><blockquote>'Simplify your life. You don't need a lot of things to be happy. Just the right things.'</blockquote>"
-    },
-    {
-        id: "2",
-        title: "Modernism: Why Geometry Still Rules Our Cities",
-        author: "Elena Rossi",
-        authorImage: "https://i.pravatar.cc/150?u=elena",
-        category: "ARCHITECTURE",
-        date: "Feb 10, 2026",
-        preview: "From skyscrapers to local cafes, the clean lines of modern geometry continue to define our urban landscape.",
-        content: "<p>Geometry is the silent language of our cities. When we look at the evolution of urban spaces, the shift toward functionalism and clean lines is undeniable.</p><ul><li>Function over form</li><li>Industrial materials</li><li>Open floor plans</li></ul>"
-    },
-    {
-        id: "3",
-        title: "Remote Productivity in the New Creative Era",
-        author: "Marcus Thorne",
-        authorImage: "https://i.pravatar.cc/150?u=marcus",
-        category: "WORKPLACE",
-        date: "Feb 08, 2026",
-        preview: "Building a distraction-free workspace is the first step toward deep work and professional growth.",
-        content: "<h3>Creating a Deep Work Sanctuary</h3><p>Your environment dictates your output. By removing digital friction and physical clutter, you unlock a higher tier of creativity.</p>"
-    },
-    {
-        id: "4",
-        title: "The Sound of Silence: Premium Audio for Focus",
-        author: "Leo Vance",
-        authorImage: "https://i.pravatar.cc/150?u=leo",
+        id: "6",
+        title: "AI-Powered Development: Coding in the Age of Intelligence",
+        author: "Aarav Mehta",
+        authorImage: "https://i.pravatar.cc/150?u=aarav",
         category: "TECHNOLOGY",
-        date: "Feb 05, 2026",
-        preview: "Exploring how high-fidelity audio and noise-cancellation technologies are changing how we focus.",
-        content: "<p>In a world that never stops talking, silence is the ultimate luxury. High-fidelity audio isn't just for music; it's a tool for deep concentration.</p>"
+        date: "Feb 15, 2026",
+        isPublished: true,
+        preview: "AI copilots are reshaping how developers write, debug, and ship code faster than ever before.",
+        content: `
+            <h2>The Rise of AI Copilots</h2>
+            <p>Artificial Intelligence is no longer a futuristic assistant — it’s embedded directly into modern IDEs. AI-powered development tools can autocomplete functions, generate entire components, and even refactor legacy codebases.</p>
+
+            <blockquote>"The best developers of the future won't code alone — they'll collaborate with machines."</blockquote>
+
+            <h3>Where AI Adds Real Value</h3>
+            <ul>
+                <li>Boilerplate generation</li>
+                <li>Automated debugging suggestions</li>
+                <li>Code explanation for onboarding teams</li>
+                <li>Test case generation</li>
+            </ul>
+
+            <p>Rather than replacing engineers, AI augments their decision-making. The developer becomes an architect — guiding logic while automation handles repetition.</p>
+        `
     },
     {
-        id: "5",
-        title: "Urban Third Spaces: Why Local Cafes Matter",
-        author: "Sarah Jenkins",
-        authorImage: "https://i.pravatar.cc/150?u=sarah",
-        category: "COMMUNITY",
-        date: "Feb 01, 2026",
-        preview: "Beyond home and work, 'third spaces' provide the community fabric necessary for mental well-being.",
-        content: "<p>The local cafe is more than a place for caffeine; it's a social anchor. These spaces allow for 'weak tie' interactions that strengthen our sense of belonging.</p>"
+        id: "7",
+        title: "Edge Computing: Why the Cloud Is Moving Closer",
+        author: "Nina Kapoor",
+        authorImage: "https://i.pravatar.cc/150?u=nina",
+        category: "TECHNOLOGY",
+        date: "Feb 14, 2026",
+        isPublished: true,
+        preview: "Latency-sensitive applications are pushing computation away from centralized data centers.",
+        content: `
+            <h2>From Centralized to Distributed</h2>
+            <p>Traditional cloud computing relies on centralized data centers. But as applications like AR, IoT, and autonomous systems grow, milliseconds matter.</p>
+
+            <h3>What Is Edge Computing?</h3>
+            <p>Edge computing processes data closer to where it's generated — reducing latency and improving reliability.</p>
+
+            <ul>
+                <li>Lower latency for real-time apps</li>
+                <li>Reduced bandwidth costs</li>
+                <li>Improved privacy and data control</li>
+            </ul>
+
+            <blockquote>"The future of computing isn't just bigger servers — it's smarter distribution."</blockquote>
+
+            <p>By decentralizing infrastructure, companies are building systems that are faster, more resilient, and more responsive.</p>
+        `
+    },
+    {
+        id: "8",
+        title: "Web Performance in 2026: Speed as a Competitive Advantage",
+        author: "Daniel Cruz",
+        authorImage: "https://i.pravatar.cc/150?u=daniel",
+        category: "WEB DEVELOPMENT",
+        date: "Feb 13, 2026",
+        isPublished: true,
+        preview: "Milliseconds impact revenue. Optimizing web performance is no longer optional.",
+        content: `
+            <h2>Why Performance Matters</h2>
+            <p>A one-second delay in load time can significantly reduce conversions. Modern users expect instant interaction across devices.</p>
+
+            <h3>Core Performance Strategies</h3>
+            <ul>
+                <li>Code splitting and lazy loading</li>
+                <li>Optimized image delivery (WebP/AVIF)</li>
+                <li>Server-side rendering & streaming</li>
+                <li>Edge caching</li>
+            </ul>
+
+            <p>Performance is UX. It affects SEO, accessibility, and user retention.</p>
+
+            <blockquote>"Speed is the most invisible feature — until it's missing."</blockquote>
+
+            <p>Engineering teams now treat performance budgets as strictly as financial budgets.</p>
+        `
+    },
+    {
+        id: "9",
+        title: "Cybersecurity in the Zero-Trust Era",
+        author: "Priya Nair",
+        authorImage: "https://i.pravatar.cc/150?u=priya",
+        category: "SECURITY",
+        date: "Feb 11, 2026",
+        isPublished: true,
+        preview: "Trust nothing, verify everything — the guiding principle of modern security architecture.",
+        content: `
+            <h2>The End of Perimeter Security</h2>
+            <p>With distributed teams and cloud-native systems, traditional firewalls are no longer enough. Zero-trust assumes that every request — internal or external — must be verified.</p>
+
+            <h3>Core Principles</h3>
+            <ul>
+                <li>Least privilege access</li>
+                <li>Continuous authentication</li>
+                <li>Device posture verification</li>
+                <li>Encrypted internal traffic</li>
+            </ul>
+
+            <blockquote>"In cybersecurity, convenience is often the enemy of protection."</blockquote>
+
+            <p>Organizations adopting zero-trust frameworks are reducing breach impact while increasing system resilience.</p>
+        `
+    },
+    {
+        id: "10",
+        title: "The Future of Open Source: Collaboration at Scale",
+        author: "Luca Bernard",
+        authorImage: "https://i.pravatar.cc/150?u=luca",
+        category: "OPEN SOURCE",
+        date: "Feb 09, 2026",
+        isPublished: true,
+        preview: "Open source has evolved from side projects to infrastructure powering the digital world.",
+        content: `
+            <h2>Beyond Hobby Projects</h2>
+            <p>Open source software now powers everything from operating systems to enterprise cloud platforms. Corporations and independent developers collaborate in shared ecosystems.</p>
+
+            <h3>Why Open Source Thrives</h3>
+            <ul>
+                <li>Transparent development processes</li>
+                <li>Community-driven innovation</li>
+                <li>Faster bug discovery</li>
+                <li>Global contributor base</li>
+            </ul>
+
+            <blockquote>"Open source isn't just code — it's a governance model."</blockquote>
+
+            <p>The next evolution includes sustainable funding models, decentralized collaboration, and AI-assisted contribution workflows.</p>
+        `
     }
 ];
 

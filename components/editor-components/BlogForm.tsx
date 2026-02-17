@@ -49,7 +49,7 @@ export default function BlogForm({ initialData, mode }: BlogFormProps) {
     };
 
     return (
-        <div className="max-w-6xl mx-auto px-6 h-[calc(100vh-80px)] flex flex-col pt-8">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col pt-8">
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-col h-full">
@@ -118,8 +118,8 @@ export default function BlogForm({ initialData, mode }: BlogFormProps) {
                         {loading
                             ? "Processing..."
                             : mode === "create"
-                              ? "Publish Blog"
-                              : "Save Changes"}
+                              ? "Publish"
+                              : "Update"}
                     </button>
                 </footer>
             </form>

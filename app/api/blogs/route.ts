@@ -16,6 +16,7 @@ export async function POST(request: NextRequest) {
             title,
             author,
             content,
+            isPublished: true,
             category: category || 'UNCATEGORIZED',
             date: new Date().toLocaleDateString('en-us', {
                 month: 'short',

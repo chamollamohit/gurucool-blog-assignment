@@ -19,7 +19,7 @@ const FeaturedBlog = ({ featuredBlog }: { featuredBlog: Blog }) => {
                         </span>
                     </div>
 
-                    <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight group-hover:tracking-tighter group-hover:text-(--accent) transition-all duration-700">
+                    <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight group-hover:tracking-tighter group-hover:text-(--accent) transition-all duration-700 line-clamp-3 md:pb-5 leading-none">
                         {featuredBlog.title}
                     </h1>
 

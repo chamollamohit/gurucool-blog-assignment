@@ -1,4 +1,4 @@
-import BlogForm from "@/components/editor/BlogForm";
+import BlogForm from "@/components/editor-components/BlogForm";
 import { getBlogById } from "@/lib/db";
 
 export default async function EditPage({
@@ -7,7 +7,7 @@ export default async function EditPage({
     params: Promise<{ id: string }>;
 }) {
     const { id } = await params;
-    const blog = await getBlogById(id);
+    const blog = getBlogById(id);
 
     return (
         <BlogForm
