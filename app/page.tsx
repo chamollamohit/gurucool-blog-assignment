@@ -1,3 +1,4 @@
+import BlogCard from "@/components/blog-components/BlogCard";
 import FeaturedBlog from "@/components/blog-components/FeaturedBlog";
 import { getAllBlogs } from "@/lib/db";
 
@@ -7,7 +8,8 @@ export default async function Home() {
     const restBlogs = blogs.slice(1);
     return (
         <main className="max-w-6xl mx-auto px-6 py-20">
-            <FeaturedBlog featuredBlog={featuredBlog} />
+            {featuredBlog && <FeaturedBlog featuredBlog={featuredBlog} />}
+            <BlogCard blogs={restBlogs} />
         </main>
     );
 }

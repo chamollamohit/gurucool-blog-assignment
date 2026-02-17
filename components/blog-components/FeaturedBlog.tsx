@@ -28,7 +28,7 @@ const FeaturedBlog = ({ featuredBlog }: { featuredBlog: Blog }) => {
                             {featuredBlog.preview}
                         </p>
                         <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em] text-(--accent) group-hover:gap-6 transition-all">
-                            Read Post <span className="text-2xl mb-3">→</span>
+                            Read Blog <span className="text-2xl mb-3">→</span>
                         </div>
                     </div>
                 </div>

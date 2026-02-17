@@ -17,7 +17,7 @@ export let blogs = globalForBlogs.blogs || [
         id: "1",
         title: "The Art of Minimal Living: Finding Space in a Crowded World",
         author: "Mohit",
-        authorImage: "https://ui-avatars.com/api/?name=Mohit&background=0D8ABC&color=fff",
+        authorImage: "https://i.pravatar.cc/150?u=moh",
         category: "LIFESTYLE",
         date: "Feb 12, 2026",
         preview: "Discover how simplifying your physical space can lead to a more intentional, fulfilling life...",
