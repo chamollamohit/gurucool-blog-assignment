@@ -22,7 +22,7 @@ const BlogCard = ({ blogs }: { blogs: Blog[] }) => {
                             <span>{blog.date}</span>
                         </div>
 
-                        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-4 group-hover:text-(--accent) transition-colors">
+                        <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight mb-4 group-hover:text-(--accent) transition-colors line-clamp-2">
                             {blog.title}
                         </h2>
 

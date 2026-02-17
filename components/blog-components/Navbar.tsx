@@ -24,7 +24,7 @@ const Navbar = () => {
                     <Link
                         href="/create"
                         className="hover:bg-(--accent) hover:border-(--accent) px-3 py-1.5 border border-(--warm-border) rounded-full transition-all hover:text-white">
-                        New Post
+                        New Blog
                     </Link>
                 </nav>
             </div>
