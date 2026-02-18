@@ -1,7 +1,6 @@
 import { Blog } from "@/lib/db";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const BlogCard = ({ blogs }: { blogs: Blog[] }) => {
     return (
