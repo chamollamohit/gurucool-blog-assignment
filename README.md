@@ -2,6 +2,16 @@
 
 A high-performance, SEO-optimized blog application built with **Next.js 16 (App Router)**, featuring a custom **Tiptap Rich Text Editor** and a dedicated **Management Dashboard**.
 
+---
+
+## 🌐 Live Demo
+
+You can view a live demo of the project deployed on Vercel here:
+
+**[➡️ Live Demo Link](https://gurucool-blog-assignment.vercel.app/)**
+
+---
+
 ## 🚀 Tech Stack
 
 - **Framework:** Next.js (App Router)
