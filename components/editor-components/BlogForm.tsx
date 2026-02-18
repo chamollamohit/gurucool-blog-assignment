@@ -49,7 +49,7 @@ export default function BlogForm({ initialData, mode }: BlogFormProps) {
     };
 
     return (
-        <div className="max-w-6xl mx-auto px-6 flex flex-col pt-8">
+        <main className="max-w-6xl mx-auto px-6 flex flex-col pt-8">
             <form
                 onSubmit={handleSubmit}
                 className="flex flex-col h-full">
@@ -103,7 +103,7 @@ export default function BlogForm({ initialData, mode }: BlogFormProps) {
                     />
                 </div>
 
-                <footer className="flex-none flex justify-between items-center py-6 border-t border-(--warm-black)/5">
+                <section className="flex-none flex justify-between items-center py-6 border-t border-(--warm-black)/5">
                     <button
                         type="button"
                         disabled={loading}
@@ -121,8 +121,8 @@ export default function BlogForm({ initialData, mode }: BlogFormProps) {
                               ? "Publish"
                               : "Update"}
                     </button>
-                </footer>
+                </section>
             </form>
-        </div>
+        </main>
     );
 }

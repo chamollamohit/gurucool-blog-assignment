@@ -46,8 +46,23 @@ export default async function SingleBlog({
 
     if (!blog) notFound();
 
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: blog.title,
+        author: {
+            "@type": "Person",
+            name: blog.author,
+        },
+        datePublished: blog.date,
+        description: blog.preview,
+    };
     return (
         <div>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <article className="max-w-6xl mx-auto px-6 py-14">
                 <Link
                     href="/"

@@ -16,14 +16,14 @@ export default async function Dashboard() {
                 </p>
             </header>
 
-            <div className="space-y-4">
+            <section className="space-y-4">
                 {blogs.map((blog) => (
                     <BlogCard
                         key={blog.id}
                         blog={blog}
                     />
                 ))}
-            </div>
+            </section>
         </main>
     );
 }
