@@ -3,6 +3,38 @@ import { getBlogById } from "@/lib/db";
 import { notFound } from "next/navigation";
 import { LinkedinIcon, LucideLink, Twitter } from "lucide-react";
 import Image from "next/image";
+export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ id: string }>;
+}) {
+    const { id } = await params;
+    const blog = getBlogById(id);
+    if (!blog)
+        return {
+            title: "Blog Not Found",
+            description: "The requested blog could not be found.",
+        };
+
+    return {
+        title: `${blog.title}`,
+        description: blog.preview,
+        openGraph: {
+            title: blog.title,
+            description: `Written by ${blog.author}`,
+            type: "article",
+            publishedTime: blog.date,
+            authors: [blog.author],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: blog.title,
+            description: `Read this story on Blogy.io`,
+        },
+    };
+}
 
 export default async function SingleBlog({
     params,
