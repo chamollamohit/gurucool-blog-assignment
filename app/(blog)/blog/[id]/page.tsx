@@ -124,10 +124,6 @@ export default async function SingleBlog({
                     prose-code:py-0.5
                     prose-code:rounded
                     prose-img:rounded-sm">
-                    <p className="text-2xl font-medium leading-tight mb-16 border-l-2 border-(--warm-black) pl-8 py-2">
-                        {blog.preview}
-                    </p>
-
                     <div
                         dangerouslySetInnerHTML={{ __html: blog.content || "" }}
                     />

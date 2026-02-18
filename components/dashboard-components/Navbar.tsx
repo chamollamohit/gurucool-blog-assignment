@@ -27,7 +27,7 @@ const Navbar = () => {
                 <Link
                     href="/create"
                     className="flex items-center gap-2 px-6 py-2 bg-(--warm-black) text-(--primary) text-[10px] font-black uppercase tracking-widest rounded-sm hover:bg-(--accent) transition-all">
-                    <Plus size={14} /> New Post
+                    <Plus size={14} /> New Blog
                 </Link>
             </div>
         </nav>
