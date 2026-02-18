@@ -19,16 +19,16 @@ const FeaturedBlog = ({ featuredBlog }: { featuredBlog: Blog }) => {
                         </span>
                     </div>
 
-                    <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight group-hover:tracking-tighter group-hover:text-(--accent) transition-all duration-700 line-clamp-3 md:pb-5 leading-none">
+                    <h1 className="text-5xl md:text-8xl font-extrabold tracking-tight group-hover:tracking-tighter group-hover:text-(--accent) transition-all duration-700 line-clamp-3 pb-1.5 md:pb-5 leading-none">
                         {featuredBlog.title}
                     </h1>
 
-                    <div className="flex flex-col md:flex-row gap-10 md:items-end">
+                    <div className="flex flex-col justify-between md:flex-row gap-10 ">
                         <p className="text-xl text-(--warm-gray) max-w-xl leading-relaxed group-hover:text-(--warm-black) transition-colors">
                             {featuredBlog.preview}
                         </p>
                         <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-[0.2em] text-(--accent) group-hover:gap-6 transition-all">
-                            Read Blog <span className="text-2xl mb-3">→</span>
+                            Read Blog <span className="text-2xl mb-2">→</span>
                         </div>
                     </div>
                 </div>
