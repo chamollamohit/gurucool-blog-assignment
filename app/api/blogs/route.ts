@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
                 day: "numeric",
                 year: "numeric"
             }),
-            authorImage: "https://ui-avatars.com/api/?name=" + author,
+            authorImage: "https://i.pravatar.cc/150?u=" + author.substring(0, 3),
             preview: content.replace(/<[^>]*>/g, '').substring(0, 150) + '...',
         }
         blogs.unshift(newBlog);

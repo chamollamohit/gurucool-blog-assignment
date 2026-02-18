@@ -159,17 +159,3 @@ export function getBlogById(id: string): Blog | undefined {
     return blogs.find((blog) => blog.id === id);
 }
 
-
-export function addBlog(blog: Blog) {
-    blogs.push(blog);
-}
-
-export function updateBlog(id: string, updatedBlog: Blog) {
-    blogs = blogs.map((blog) =>
-        blog.id === id ? updatedBlog : blog
-    );
-}
-
-export function deleteBlog(id: string) {
-    blogs = blogs.filter((blog) => blog.id !== id);
-}

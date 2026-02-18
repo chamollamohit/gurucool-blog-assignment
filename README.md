@@ -32,7 +32,7 @@ To optimize performance and follow industry best practices, I avoided making int
 
 Since external databases were restricted, the application uses a **Global Singleton Pattern** for data storage:
 
-- **Persistence Note:** Data is stored in a centralized `lib/sb.ts` file.
+- **Persistence Note:** Data is stored in a centralized `lib/db.ts` file.
 - **Production Constraint:** Because this is an in-memory solution, data mutations (Create/Delete) will not persist across different serverless instances in production (e.g., Vercel). Each instance maintains its own memory. This is an intentional architectural trade-off due to the **"No External Database"** requirement.
 
 ### 4. Rich Text Editor Integration
